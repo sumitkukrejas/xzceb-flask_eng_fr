@@ -5,9 +5,10 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
+url = 'REhiCUdRa-pQuK-TjDRzIAptPu-fAQzsr6b-ZmAjxm7L'
+apikey = 'https://api.jp-tok.language-translator.watson.cloud.ibm.com/instances/fe588435-d34e-4e98-93f4-3f9e2eaa01fe'
 
-apikey = os.environ['apikey']
-url = os.environ['url']
+
 
 authenticator = IAMAuthenticator(apikey)
 language_translator = LanguageTranslatorV3(
@@ -34,3 +35,4 @@ def frenchToEnglish(frenchText):
     model_id='fr-en').get_result()
     # print(translation)
     return translation['translations'][0]['translation']
+
